@@ -9,10 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<StoreContext>(x => {
-    x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("API"));
 });
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 app.MapControllers();
