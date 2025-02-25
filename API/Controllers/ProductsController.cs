@@ -75,4 +75,16 @@ public class ProductsController(IProductRepository productRepository) : Controll
 
         return BadRequest("Unable to delete Product");
     }
+
+    [HttpGet("brands")]
+    public async Task<ActionResult<IEnumerable<string>>> GetBrands()
+    {
+        return Ok(await productRepository.GetBrandsAsync());
+    }
+
+    [HttpGet("types")]
+    public async Task<ActionResult<IEnumerable<string>>> GetTypes()
+    {
+        return Ok(await productRepository.GetTypesAsync());
+    }
 }
