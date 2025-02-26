@@ -12,9 +12,9 @@ namespace API.Controllers;
 public class ProductsController(IProductRepository productRepository) : ControllerBase
 {
     [HttpGet("products")]
-    public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
+    public async Task<ActionResult<IEnumerable<Product>>> GetProducts(string? brand, string? type)
     {
-        return Ok(await productRepository.GetProductsAsync());
+        return Ok(await productRepository.GetProductsAsync(brand, type));
     }
 
     [HttpGet("product/{id}")]
