@@ -15,7 +15,7 @@ public class ProductsController(IGenericRepository<Product> genericRepository) :
     [HttpGet("products")]
     public async Task<ActionResult<IEnumerable<Product>>> GetProducts(string? brand, string? type, string? sort)
     {
-        var spec = new ProductSpecification(brand, type);
+        var spec = new ProductSpecification(brand, type, sort);
         var products = await genericRepository.ListAsync(spec);
         return Ok(products);
     }
