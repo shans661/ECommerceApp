@@ -12,4 +12,7 @@ public interface IGenericRepository<T> where T: BaseEntity
     void Delete(T entity);
     bool Exists(int id);
     Task<bool> SaveChangesAsync();
+
+    Task<T?> GetEntityWithSpec(ISpecification<T> spec);
+    Task<List<T>> ListAsync(ISpecification<T> spec);
 }
