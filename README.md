@@ -1,4 +1,5 @@
 # ECommerceApp
+
 Overview
 
 - API: ASP.NET Core Web API (backend) that exposes endpoints for products, categories, users, orders, authentication, and other e‑commerce operations.
