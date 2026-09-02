@@ -1,7 +1,5 @@
 # ECommerceApp
 
-This repository contains the source code for a sample e-commerce application (API + UI). The project is based on a full step-by-step course available on Udemy: "Learn to build an e-commerce app with .NET Core and Angular" — see the course overview: https://www.udemy.com/course/learn-to-build-an-e-commerce-app-with-net-core-and-angular/learn/lecture/45148779?start=0#overview
-
 Overview
 
 - API: ASP.NET Core Web API (backend) that exposes endpoints for products, categories, users, orders, authentication, and other e‑commerce operations.
