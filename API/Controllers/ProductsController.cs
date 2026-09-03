@@ -82,16 +82,14 @@ public class ProductsController(IGenericRepository<Product> genericRepository) :
     [HttpGet("brands")]
     public async Task<ActionResult<IEnumerable<string>>> GetBrands()
     {
-        //Need to implement this method in the GenericRepository
-       // return Ok(await genericRepository.GetBrandsAsync());
-        return Ok();
+        var spec = new BrandListSpecification();
+        return Ok(await genericRepository.ListAsync(spec));
     }
 
     [HttpGet("types")]
     public async Task<ActionResult<IEnumerable<string>>> GetTypes()
     {
-        //Need to implement this method in the GenericRepository
-        //return Ok(await genericRepository.GetTypesAsync());
-        return Ok();
+        var spec = new TypeListSpecification();
+        return Ok(await genericRepository.ListAsync(spec));
     }
 }

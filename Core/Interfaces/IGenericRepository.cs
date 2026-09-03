@@ -15,4 +15,6 @@ public interface IGenericRepository<T> where T: BaseEntity
 
     Task<T?> GetEntityWithSpec(ISpecification<T> spec);
     Task<List<T>> ListAsync(ISpecification<T> spec);
+      Task<TResult?> GetEntityWithSpec<TResult>(ISpecification<T, TResult> spec);
+    Task<List<TResult>> ListAsync<TResult>(ISpecification<T, TResult> spec);
 }
